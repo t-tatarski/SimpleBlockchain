@@ -1,6 +1,7 @@
 package features;
 
 import java.util.Date;
+import java.util.Random;
 
 public class Block {
     private String data;
@@ -13,8 +14,16 @@ public class Block {
         this.data = data;
         this.previousHash = previousHash;
         this.timeStamp = new Date().getTime();
-        this.hash = hashCalculate();
+        this.nonce = generateNonce();
 
+    }
+
+    private int generateNonce() {
+        // bitcoin use 4 bytes value
+        int result;
+        Random random = new Random();
+        result = random.nextInt(65535);
+        return result;
     }
 
     @Override
@@ -77,11 +86,8 @@ public class Block {
         return nonce;
     }
 
-    public void setNonce(int nonce) {
-        this.nonce = nonce;
-    }
-
-    private String hashCalculate() {
-        return "EF7797E13D3A75526946A3BCF00DAEC9FC9C9C4D51DDC7CC5DF888F74DD434D1";
+    public String hashCalculate(String str) {
+        String rslt = CryptHsh.sha256(str);
+        return rslt;
     }
 }
