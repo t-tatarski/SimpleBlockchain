@@ -9,5 +9,10 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //test
+        String tst="this is the first transaction";
+        String hashed = CryptHsh.sha256(tst);
+        System.out.println(tst+" \n "+hashed);
+
     }
 }
