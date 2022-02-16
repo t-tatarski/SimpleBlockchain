@@ -14,5 +14,8 @@ public class Main {
         String hashed = CryptHsh.sha256(tst);
         System.out.println(tst+" \n "+hashed);
 
+        //genesis block
+
+
     }
 }
