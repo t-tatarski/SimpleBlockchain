@@ -12,6 +12,10 @@ public class Block {
     private long timeStamp;
     private int nonce;
 
+    public Block (int index, List<String> transactions){
+        this.index= index;
+        this.transactions=transactions;
+    }
     public Block (int index, List<String> transactions, String hash, String previousHash){
         this.transactions = transactions;
         this.previousHash = previousHash;
