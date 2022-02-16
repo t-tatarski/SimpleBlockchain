@@ -25,7 +25,7 @@ public class Main {
         System.out.println(block0.toString());
         System.out.println(block0.getHash().toUpperCase(Locale.ROOT));
 
-        //genesis block
+
 
 
     }
